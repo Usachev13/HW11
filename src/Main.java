@@ -11,8 +11,9 @@ public class Main {
     public static void returnLeapYear(int year) {
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println("Год является високосным");
-        } else
+        } else {
             System.out.println("Год не является високосным");
+        }
     }
     public static void task1(){
         System.out.println("Task 1");
@@ -21,12 +22,15 @@ public class Main {
     }
 
     public static void installThisOs(int os, int productionYear){
-        if (os == 0){
-            if (productionYear < 2015){
+        int ios = 0;
+        int android = 1;
+        int yearOfChange = 2015;
+        if (os == ios){
+            if (productionYear < yearOfChange){
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             }else System.out.println("Установите версию приложения для iOS по ссылке");
-        }else if (os == 1){
-            if (productionYear < 2015){
+        }else if (os == android){
+            if (productionYear < yearOfChange){
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             }else { System.out.println("Установите версию приложения для Android по ссылке");
             }
@@ -42,25 +46,26 @@ public class Main {
         installThisOs(os, productionYear);
     }
 
-    public static void returnDeliveryDays(int distance){
-        int daysForDelivery = 0;
+    public static String returnDeliveryDays(int distance){
+        String daysForDelivery;
         if (distance <= 20){
-            daysForDelivery += 1;
-            System.out.println("Потребуется дней: " + daysForDelivery);
-        } else if (distance > 20 && distance <= 60){
-            daysForDelivery += 2;
-            System.out.println("Потребуется дней: " + daysForDelivery);
-        } else if (distance > 60 && distance < 100){
-            daysForDelivery += 3;
-            System.out.println("Потребуется дней: " + daysForDelivery);
-        }else System.out.println("Доставка не осуществляется");
+            daysForDelivery = "Потребуется дней: 1";
+        } else if (distance <= 60){
+            daysForDelivery = "Потребуется дней: 2";
+        } else if (distance < 100){
+            daysForDelivery = "Потребуется дней: 3";
+        }else {
+            daysForDelivery = "Доставка не осуществляется";
+        }
+        return daysForDelivery;
     }
 
     public static void task3(){
-        System.out.println("Task 1");
+        System.out.println("Task 3");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Укажите расстояние до себя:");
         int distance = scanner.nextInt();
-        returnDeliveryDays(distance);
+        String daysForDelivery = returnDeliveryDays(distance);
+        System.out.println(daysForDelivery);
     }
 }
