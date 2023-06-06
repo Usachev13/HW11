@@ -3,8 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("HW11 starts!");
+        System.out.println("Task 1");
         task1();
+        System.out.println("Task 2");
         task2();
+        System.out.println("Task 3");
         task3();
     }
 
@@ -16,7 +19,6 @@ public class Main {
         }
     }
     public static void task1(){
-        System.out.println("Task 1");
         int year = 2024;
         returnLeapYear(year);
     }
@@ -37,7 +39,6 @@ public class Main {
         }
     }
     public static void task2(){
-        System.out.println("Task 2");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your OS : ios write '0', android write '1' ");
         int os = scanner.nextInt();
@@ -61,7 +62,6 @@ public class Main {
     }
 
     public static void task3(){
-        System.out.println("Task 3");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Укажите расстояние до себя:");
         int distance = scanner.nextInt();
